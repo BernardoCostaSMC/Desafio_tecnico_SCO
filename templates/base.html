@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Olá, {{ user.username }} | 
+           <form method="post" action="{% url 'logout' %}">
+               {% csrf_token %}
+               <button type="submit">Logout</button>
+           </form>
+        </p>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert-message {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% endif %}
+
+    <script>
+        setTimeout(function() {
+            const messages = document.querySelectorAll('.alert-message');
+            messages.forEach(function(msg) {
+                msg.style.opacity = '0';
+                setTimeout(() => msg.remove(), 500);
+            });
+        }, 5000); // 5000ms = 5 segundos
+    </script>
+</body>
+</html>
