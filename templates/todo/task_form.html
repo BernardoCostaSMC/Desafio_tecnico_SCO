@@ -7,8 +7,8 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit">Salvar</button>
+        <button class="btn btn-info" type="submit"><i class="fa-regular fa-circle-down" style="color: rgb(255, 255, 255);"></i>Salvar</button>
     </form>
 
-    <a href="{% url 'task_list' %}">Voltar</a>
+    <a  class="btn btn-secondary" href="{% url 'task_list' %}"><i class="fa-solid fa-angles-left" style="color: rgb(255, 255, 255);"> </i>Voltar</a>
 {% endblock %}

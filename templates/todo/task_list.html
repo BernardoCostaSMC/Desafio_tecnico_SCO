@@ -3,7 +3,7 @@
 {% block content %}
 <h2>Minhas Tarefas</h2>
 
-<a href="{% url 'task_create' %}">Nova Tarefa</a>
+<a class="btn btn-info" href="{% url 'task_create' %}"><i class="fa-solid fa-circle-plus" style="color: rgb(255, 255, 255);"></i></a>
 
 <ul>
     {% for task in tasks %}
@@ -11,8 +11,8 @@
             <strong>{{ task.title }}</strong>
             - {{ task.get_status_display }}
             
-            <a href="{% url 'task_update' task.pk %}">Editar</a>
-            <a href="{% url 'task_delete' task.pk %}">Excluir</a>
+            <a class="btn btn-info" href="{% url 'task_update' task.pk %}"><i class="fa-solid fa-file-pen" style="color: rgb(255, 255, 255);"> </i></a>
+            <a class="btn btn-danger" href="{% url 'task_delete' task.pk %}"><i class="fa-solid fa-trash-can" style="color: rgb(255, 255, 255);"> </i></a>
         </li>
     {% empty %}
         <li>Nenhuma tarefa cadastrada.</li>

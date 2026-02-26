@@ -6,11 +6,11 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Entrar</button>
+    <button class="btn btn-info" type="submit"><i class="fa-solid fa-arrow-right-to-bracket" style="color: rgb(255, 255, 255);"></i>Entrar</button>
 </form>
 
 <p>
     Não tem conta? 
-    <a href="{% url 'signup' %}">Cadastre-se</a>
+    <a class="btn btn-info" href="{% url 'signup' %}"><i class="fa-solid fa-user-plus" style="color: rgb(255, 255, 255);"></i>Cadastre-se</a>
 </p>
 {% endblock %}

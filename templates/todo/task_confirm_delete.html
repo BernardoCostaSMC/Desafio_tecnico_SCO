@@ -7,9 +7,9 @@
 
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Confirmar</button>
+    <button class="btn btn-success" type="submit"><i class="fa-solid fa-circle-check" style="color: rgb(255, 255, 255);"></i>Confirmar</button>
 </form>
 
-<a href="{% url 'task_list' %}">Cancelar</a>
+<a href="{% url 'task_list' %}"  class="btn btn-secondary"><i class="fa-solid fa-circle-xmark" style="color: rgb(255, 255, 255);"></i>Cancelar</a>
 
 {% endblock %}
