@@ -1,28 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
     <title>To-Do List</title>
-</head>
-<body class="d-flex flex-column min-vh-100">
-    {% if user.is_authenticated %}
-        <p>Olá, {{ user.username }} | 
-           <form method="post"  action="{% url 'logout' %}">
-               {% csrf_token %}
-               <button  class="btn btn-secondary" type="submit"><i class="fa-solid fa-arrow-right-from-bracket" style="color: rgb(255, 255, 255);"> </i></button>
-           </form>
-        </p>
-    {% endif %}
 
-    {% block content %}{% endblock %}
-    {% include 'partial/_footer.html' %}
-    {% if messages %}
-    {% for message in messages %}
-        <div class="alert-message {{ message.tags }}">
-            {{ message }}
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+    <style>
+        body {
+            background-color: #afafaf;
+        }
+
+        .navbar-brand {
+            font-size: 1.4rem;
+        }
+
+        footer {
+            font-size: 0.9rem;
+        }
+
+        .alert-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-list-check"></i> To-Do
+            </a>
+
+            <div class="d-flex align-items-center">
+                {% if user.is_authenticated %}
+                    <span class="text-white me-3">
+                        Olá, <strong>{{ user.username }}</strong>
+                    </span>
+
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-light btn-sm" type="submit">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm">
+                        Login
+                    </a>
+                {% endif %}
+            </div>
         </div>
-    {% endfor %}
+    </nav>
+
+    <!-- CONTEÚDO -->
+    <main class="flex-fill container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'partial/_footer.html' %}
+
+    <!-- MENSAGENS -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-message">
+                {{ message }}
+            </div>
+        {% endfor %}
     {% endif %}
 
     <script>
@@ -32,7 +88,8 @@
                 msg.style.opacity = '0';
                 setTimeout(() => msg.remove(), 500);
             });
-        }, 5000); // 5000ms = 5 segundos
+        }, 5000);
     </script>
+
 </body>
 </html>
