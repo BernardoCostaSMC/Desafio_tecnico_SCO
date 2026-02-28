@@ -9,11 +9,11 @@ class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'accounts/signup.html'
     success_url = reverse_lazy('login')
-    
+
     def form_valid(self, form):
         response = super().form_valid(form)
 
-        grupo = Group.objects.get_or_create(name='Usuarios')
+        grupo, created = Group.objects.get_or_create(name='Usuários')
         self.object.groups.add(grupo)
 
         return response

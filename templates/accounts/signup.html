@@ -2,39 +2,38 @@
 
 {% block content %}
 
-<div style="width: 400px; margin: 60px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+    <div class="col-md-4">
+        <div class="card shadow p-4">
+            <h2 style="text-align: center; margin-bottom: 20px;">Criar Conta</h2>
 
-    <h2 style="text-align: center; margin-bottom: 20px;">Criar Conta</h2>
+            <form method="post">
+                {% csrf_token %}
 
-    <form method="post">
-        {% csrf_token %}
+                <div style="margin-bottom: 15px;">
+                    <label for="id_username">Nome de usuário</label>
+                    {{ form.username }}
+                </div>
 
-        <div style="margin-bottom: 15px;">
-            <label for="id_username">Nome de usuário</label>
-            {{ form.username }}
+                <div style="margin-bottom: 15px;">
+                    <label for="id_password1">Senha</label>
+                    {{ form.password1 }}
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label for="id_password2">Confirmar senha</label>
+                    {{ form.password2 }}
+                </div>
+
+                <button type="submit" class="btn btn-info">Cadastrar</button>
+            </form>
+
+            <p style="margin-top: 15px; text-align: center;">
+                Já tem conta?
+                <a href="{% url 'login' %}">Fazer login</a>
+            </p>
         </div>
-
-        <div style="margin-bottom: 15px;">
-            <label for="id_password1">Senha</label>
-            {{ form.password1 }}
-        </div>
-
-        <div style="margin-bottom: 20px;">
-            <label for="id_password2">Confirmar senha</label>
-            {{ form.password2 }}
-        </div>
-
-        <button type="submit" 
-                class="btn btn-info">
-            Cadastrar
-        </button>
-    </form>
-
-    <p style="margin-top: 15px; text-align: center;">
-        Já tem conta?
-        <a href="{% url 'login' %}">Fazer login</a>
-    </p>
-
+    </div>    
 </div>
 
 {% if form.errors %}
