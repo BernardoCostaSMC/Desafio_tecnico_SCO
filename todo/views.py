@@ -20,7 +20,7 @@ class TaskListView(LoginRequiredMixin, ListView):
 class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task
     form_class = TaskForm
-    template_name = 'todo/task_form.html'
+    template_name = 'todo/task_create_form.html'
     success_url = reverse_lazy('task_list')
 
     def form_valid(self, form):
@@ -36,7 +36,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
 class TaskUpdateView(LoginRequiredMixin, UpdateView):
     model = Task
     form_class = TaskForm
-    template_name = 'todo/task_form.html'
+    template_name = 'todo/task_edit_form.html'
     success_url = reverse_lazy('task_list')
 
     def get_queryset(self):
