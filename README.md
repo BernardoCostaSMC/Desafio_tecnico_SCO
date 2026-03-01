@@ -67,32 +67,25 @@ Partial responsavel por serpara o footer da tela base.html para que facilite a m
 Uma tela simples com campos de 'Nome de usuário' e 'Senha', além de botões como 'Entrar', que efetua o login caso os dados estejam corretos, e o botão 'Cadastre-se', que leva para a tela de cadastro onde é possível criar um usuário.
 Essa tela chamada automaticamente quando a URL estiver sem parâmetro
 
-![Tela de LogIn](./fotos_README/tela_Login.png)
 
 ### Tela de SignUp (signup.html)
 Tela responsável pela criação de usuários para que possam acessar a aplicação por meio da tela de login. Esta tela conta com campos como 'Usuário', 'Senha' e 'Confirmação de Senha', além do botão 'Cadastrar' para salvar os dados inseridos caso estejam de acordo com a verificação standard do Django.
 
-![Tela de Sigup](./fotos_README/tela_Sigup.png)
 
 ### Tela Lista de Tarefas (task_list.html)
 Esta é a tela principal da aplicação, onde são mostradas cards que apresentam as tarefas para cada usuario, contendo o titulo, descrição, seu status, um botão para criar uma tarefa que leva para uma tela(task_create_form.html), um botão para editar a tarefa que leva para uma tela(task_edit_form.html) e um botão para deletar a tarefa que leva para uma tela(task_confirm_delete.html).
 
-![Tela Lista de Tarefas](./fotos_README/tela_Lista.png)
 
 ### Tela de Criação de Tarefas (task_create_form.html)
 A tela de Criação oferece uma visão mais detalhada para criação de tarefas, onde podemos criar uma tarefa nova colocando seu titulo, sua descrição e seu status. 
 
-![Tela de Criação de Tarefas](./fotos_README/tela_Criação.png)
 
 ### Tela de Edição de Tarefas (task_edit_form.html)
 A tela de Edição oferece uma visão mais detalhada para edição de tarefas, onde podemos editar o titulo, descrição e status de uma tarefa. 
 
-![Tela de Edição de Tarefas](./fotos_README/tela_Edição.png)
 
 ### Tela de Confirmação de Exclusão de Tarefas (task_confirm_delete.html)
 A tela de Confirmação de Exclusão é dedicada a uma confirmação do usuario para eclusão de tarefas.
-
-![Tela de Confirmação de Exclusão de Tarefas](./fotos_README/tela_Exclusão.png)
 
 
 ---
