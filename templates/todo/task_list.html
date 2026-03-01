@@ -7,7 +7,8 @@
         <h2 class="mb-0">Minhas Tarefas</h2>
 
         <a class="btn btn-info"
-        href="{% url 'task_create' %}">
+            title='Add nova tarefa'
+            href="{% url 'task_create' %}">
             <i class="fa-solid fa-circle-plus"></i>
         </a>
     </div>
@@ -27,11 +28,13 @@
 
                 <div class="d-flex gap-2">
                     <a class="btn btn-info btn-sm"
-                       href="{% url 'task_update' task.pk %}">
+                        title='Editar'
+                        href="{% url 'task_update' task.pk %}">
                         <i class="fa-solid fa-file-pen"></i>
                     </a>
 
                     <a class="btn btn-danger btn-sm"
+                       title='Deletar'
                        href="{% url 'task_delete' task.pk %}">
                         <i class="fa-solid fa-trash-can"></i>
                     </a>
