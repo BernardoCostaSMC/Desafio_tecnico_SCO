@@ -1,20 +1,19 @@
 # Desafio Técnico Seu Cliente Oculto 
 
-## Índice
-- [Desafio Técnico do Processo Seletivo Seu Cliente Oculto](#desafio-técnico-seu-cliente-oculto)
-  - [Índice](#índice)
-  - [Descrição do Desafio](#descrição-do-desafio)
-  - [Como executar o arquivo](#como-executar-o-arquivo)
-    - [Requisitos](#requisitos)
-    - [Passo a Passo](#passo-a-passo)
-  - [Telas Desenvolvidas](#telas-desenvolvidas)
-    - [Base.html](#basehtml)
-    - [Tela de LogIn (login.html)](#tela-de-login-loginhtml)
-    - [Tela de Cadastro (cadastro.html)](#tela-de-cadastro-cadastrohtml)
-    - [Tela Home (home.html)](#tela-home-homehtml)
-    - [Tela de Detalhes (detalhes.html)](#tela-de-detalhes-detalheshtml)
-  - [Diagrama de Entidade-Relacionamento](#diagrama-de-entidade-relacionamento)
-  - [Contato](#contato)
+## 📑 Índice
+- [Descrição do Desafio](#descrição-do-desafio)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+  - [Requisitos](#requisitos)
+  - [Passo a Passo](#passo-a-passo)
+- [Telas Desenvolvidas](#telas-desenvolvidas)
+  - [Base (base.html)](#base-basehtml)
+  - [Footer (_footer.html)](#footer-_footerhtml)
+  - [Tela de Login (login.html)](#tela-de-login-loginhtml)
+  - [Tela de Cadastro (signup.html)](#tela-de-cadastro-signuphtml)
+  - [Lista de Tarefas (task_list.html)](#lista-de-tarefas-task_listhtml)
+  - [Criação de Tarefas (task_create_form.html)](#criação-de-tarefas-task_create_formhtml)
+  - [Edição de Tarefas (task_edit_form.html)](#edição-de-tarefas-task_edit_formhtml)
+  - [Confirmação de Exclusão (task_confirm_delete.html)](#confirmação-de-exclusão-task_confirm_deletehtml)
 
 ## Descrição do Desafio
 O teste consiste no desenvolviento de um To Do List com autenticação de usuario. O único requisito obrigatório é o uso do Framework Django.<br> 
